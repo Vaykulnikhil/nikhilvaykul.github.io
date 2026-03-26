@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: black;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background: black;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      color: chartreuse;
+      font-size: 22px;
+      letter-spacing: 1px;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 40px;
+      color: chartreuse;
+    }
+
+    .navtag a {
+      color: chartreuse;
+      padding: 5px 10px;
+      margin: 0 5px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .navtag a:hover,
+    .navtag a.active {
+      color: white;
+      text-shadow: 0 0 10px chartreuse;
+    }
+
+    .menu-btn {
+      display: none;
+      font-size: 28px;
+      color: chartreuse;
+      cursor: pointer;
+    }
+
+    section {
+      padding: 80px 60px;
+      text-align: center;
+    }
+
+    /* Empty home section */
+    #home {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(to bottom, black, #0f0f0f);
+      color: chartreuse;
+      font-size: 30px;
+      letter-spacing: 2px;
+      text-shadow: 0 0 15px chartreuse;
+    }
+
+    /* About section */
+    #about {
+      text-align: center;
+    }
+
+    #about h2 {
+      color: chartreuse;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    #about-container {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      text-align: left;
+    }
+
+   #about-container img {
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  border: 2px solid #00ff88; /* green edge */
+  background: radial-gradient(circle at center, rgba(0,255,136,0.25) 0%, transparent 70%);
+  box-shadow:
+    0 0 15px rgba(0,255,136,0.8),
+    0 0 35px rgba(0,255,136,0.6),
+    0 0 60px rgba(0,255,136,0.4),
+    inset 0 0 25px rgba(0,255,136,0.2);
+  transition: all 0.4s ease-in-out;
+}
+
+#about-container img:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 0 25px rgba(0,255,136,1),
+    0 0 50px rgba(0,255,136,0.8),
+    0 0 90px rgba(0,255,136,0.6),
+    inset 0 0 35px rgba(0,255,136,0.3);
+}
+
+    #about-container div {
+      flex: 2;
+      min-width: 300px;
+    }
+
+    #about-container p {
+      font-size: 18px;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+
+    /* Skills section */
+    .skills-box {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      /* flex-wrap: wrap; */
+      margin-top: 30px;
+    }
+
+    .skill-card {
+      background: rgba(0, 0, 0, 0.8);
+      border: 2px solid chartreuse;
+      border-radius: 12px;
+      width: 120px;
+      height: 120px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 15px rgba(0, 255, 128, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .skill-card img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 5px chartreuse);
+    }
+
+    .skill-card p {
+      color: white;
+      font-weight: bold;
+      margin-top: 8px;
+    }
+
+    .skill-card:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 25px #00ff99, 0 0 50px chartreuse;
+      border-color: #00ff99;
+    }
+
+    /* Projects */
+    .projects {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: black;
+      border-radius: 10px;
+      padding: 30px;
+      width: 250px;
+      border: 1px solid chartreuse;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      background: chartreuse;
+      transform: scale(1.05);
+      color: black;
+    }
+
+    footer {
+      background: black;
+      text-align: center;
+      padding: 30px;
+      margin-top: 40px;
+    }
+
+    /* Reveal Animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(60px);
+      transition: all 0.8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      .menu-btn {
+        display: block;
+      }
+
+      .navtag {
+        display: none;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.95);
+        position: absolute;
+        top: 80px;
+        right: 20px;
+        border: 1px solid chartreuse;
+        padding: 15px;
+        border-radius: 10px;
+      }
+
+      .navtag.active {
+        display: flex;
+      }
+
+      #about-container {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>My Portfolio</h1>
+    <div class="menu-btn">☰</div>
+    <nav class="navtag">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Empty Home Section -->
+    <section id="home" class="reveal">
+      Welcome to My Portfolio 🚀
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="reveal">
+      <h2>About <span style="color:white; text-shadow:0 0 15px chartreuse;">Me</span></h2>
+
+      <div id="about-container">
+        <img src="/Nikhil.jpg.jpeg" alt="Nikhil" />
+        <div>
+          <p style="font-size: 18px; line-height: 1.8;">
+  Hi! I’m 
+  <strong style="color: chartreuse;">
+    <span style="font-size: 28px; text-shadow: 0 0 15px chartreuse; letter-spacing: 1px;">
+      NIKHIL VAYKUL
+    </span>
+  </strong>, 
+  a passionate learner currently pursuing 
+  <strong style="color: chartreuse;">B.Sc. in Information Technology</strong>.
+  My goal is to become a 
+  <strong style="color: chartreuse;">Python Full Stack Developer</strong>.
+</p>
+
+          
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="reveal">
+      <h2>Technical Expertise</h2>
+      <div class="skills-box">
+        <div class="skill-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
+          <p>HTML</p>
+        </div>
+
+        <div class="skill-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
+          <p>CSS</p>
+        </div>
+
+        <div class="skill-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+          <p>JavaScript</p>
+        </div>
+
+        <div class="skill-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+          <p>Python</p>
+        </div>
+
+        <div class="skill-card">
+          <img src="/188-1882416_flask-python-logo-hd-png-download.png" alt="Flask">
+          <p>Flask</p>
+        </div>
+
+        <div class="skill-card">
+          <img src="/download.png" alt="Django Logo">
+          <p>Django</p>
+        </div>
+
+        <div class="skill-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="SQLite">
+          <p>SQLite</p>
+        </div>
+
+        <div class="skill-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+          <p>MySQL</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="reveal">
+      <h2>Projects</h2>
+      <div class="projects">
+        <div class="card">Swiftkart-E-commerce website</div>
+        <div class="card">Job Portal</div>
+        <div class="card">Echo-Musice Downloader</div>
+      </div>
+    </section>
+
+    <section id="contact" class="reveal">
+      <h2>Contact Me</h2>
+      <p>Email:
+        <a href="mailto:youremail@example.com" class="email-link">vaykulnikhil@gmail.com</a>
+      </p>
+      <p class="social-links">
+        <a href="https://www.linkedin.com/in/nikhil-vaykul-8b7441298/" target="_blank">LinkedIn</a> |
+        <a href="https://github.com/Vaykulnikhil" target="_blank">GitHub</a> |
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Nikhil | All Rights Reserved</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

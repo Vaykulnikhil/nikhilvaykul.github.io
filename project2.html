@@ -1,0 +1,249 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CBUM Fitness Gym</title>
+  <style>
+    /* General */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      line-height: 1.6;
+    }
+    h1, h2, h3 {
+      text-align: center;
+    }
+
+    /* Navbar */
+    header {
+      background: #000;
+      color: #fff;
+      padding: 15px 30px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+    }
+    .nav-links li {
+      margin: 0 15px;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      transition: 0.3s;
+    }
+    .nav-links a:hover {
+      color: gold;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    /* Hero */
+    .hero {
+      height: 100vh;
+      background: url("/Cbum-Wallpapersun-u-9\ \(3\).jpg") no-repeat center center/cover;
+      margin: 0px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-shadow: 2px 2px 8px black;
+    }
+    .hero h2 {
+      font-size: 40px;
+    }
+    .btn {
+      background: gold;
+      padding: 10px 20px;
+      color: black;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 20px;
+      border-radius: 5px;
+    }
+    .btn:hover {
+      background: white;
+    }
+
+    /* About */
+    .about, .services, .pricing, .contact {
+      padding: 80px 20px;
+    }
+
+    /* Services */
+    .services {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+    .service-box {
+      background: #f4f4f4;
+      padding: 20px;
+      margin: 10px;
+      width: 250px;
+      text-align: center;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+    .service-box:hover {
+      background: gold;
+      color: black;
+      transform: scale(1.05);
+    }
+
+    /* Pricing */
+    .pricing {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    .plan {
+      background: #111;
+      color: white;
+      padding: 30px;
+      border-radius: 10px;
+      width: 200px;
+      text-align: center;
+    }
+    .plan:hover {
+      background: gold;
+      color: black;
+    }
+
+    /* Contact */
+    .contact form {
+      max-width: 400px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+    }
+    .contact input, .contact textarea, .contact button {
+      margin: 10px 0;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+    .contact button {
+      background: gold;
+      cursor: pointer;
+    }
+    .contact button:hover {
+      background: black;
+      color: white;
+    }
+
+    /* Footer */
+    footer {
+      background: #000;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav>
+      <h1 class="logo">CBUM Fitness</h1>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <h2>Push Harder Than Yesterday</h2>
+    <p>Join the best gym in town and transform yourself.</p>
+    <a href="#contact" class="btn">Join Now</a>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <p>We are a modern fitness club inspired by CBUM. Our goal is to help you achieve your dream physique with proper training and guidance.</p>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="services">
+    <h2>Our Services</h2>
+    <div class="service-box">
+      <h3>💪 Personal Training</h3>
+      <p>One-on-one guidance from expert trainers.</p>
+    </div>
+    <div class="service-box">
+      <h3>🏋️‍♂️ Strength Training</h3>
+      <p>Build muscle and get stronger with our equipment.</p>
+    </div>
+    <div class="service-box">
+      <h3>🔥 Fat Loss Programs</h3>
+      <p>Effective routines to burn calories and lose fat.</p>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="pricing">
+    <h2>Membership Plans</h2>
+    <div class="plan">
+      <h3>Basic</h3>
+      <p>₹999 / month</p>
+    </div>
+    <div class="plan">
+      <h3>Pro</h3>
+      <p>₹1999 / month</p>
+    </div>
+    <div class="plan">
+      <h3>Premium</h3>
+      <p>₹2999 / month</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message"></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 CBUM Fitness | Designed by You</p>
+  </footer>
+</body>
+</html>
+
+</body>
+</html>

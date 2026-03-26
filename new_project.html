@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartMobiles-landing Page</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f4f4;
+    }
+
+    header {
+        background-color: #bf8024;
+        color: white;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+
+    }
+
+    .hero {
+        display: flex;
+        background-color: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        align-items: center;
+
+    }
+    .hero img{
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin: 30px;
+    display: block;
+}
+
+    .hero-content{
+        flex: 1;
+    }
+    .hero-content h2{
+        margin-top: 0;
+        color:#333;
+    }
+    .price{
+        font-size: 24px;
+        color: #28a745;
+        margin: 20px 0;
+    }
+    .buy-btn{
+        background-color:#bf8024 ;
+        color: white;
+        padding: 12px 25px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 16px;
+
+    }
+    .buy-btn:hover{
+       background-color: #084298;
+    }
+    .features{
+       margin-top: 40px;
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px; 
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    
+    }
+    .features ul{
+        list-style: none;
+        padding: left 0;
+    }
+    .features li{
+        padding: 10px 0;
+        border-bottom: 1px solid #ddd;
+    }
+    footer{
+        text-align: center;
+        background-color: #bf8024;
+        color: white;
+        margin-top: 50px;
+    }
+    @media(max-width: 768px) {
+        .hero{
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+    .hero img{
+        margin: 0 auto 20px;
+    }
+
+    
+</style>
+
+<body>
+    <header>
+        <h1>SmartMobiles</h1>
+        <p>Your One Stop Mobile Shop</p>
+    </header>
+
+    <div class="container">
+        <div class="hero"></div>
+        <img src="https://cdn.pixabay.com/photo/2022/09/25/22/25/iphones-7479304_1280.jpg" alt="Mobile Phone">
+        <div class="hero content"></div>
+        <h2>iphone 17 pro Max</h2>
+        <p>The ultimate smartphone with cutting-edge performance, advanced camera system, and premium design</p>
+        <div class="price">₹1,49,900</div>
+        <a href="#" class="buy-btn">Buy Now</a>
+    </div>
+
+    <div class="features">
+        <h3>Key Features</h3>
+        <ul>
+            <li>a 6.3-inch Super Retina XDR display with ProMotion</li>
+            <li>roMotion (up to 120Hz) and improved brightness</li>
+            <li>new 18-megapixel front-facing camera,</li>
+            <li>48MP Dual Fusion camera system</li>
+            <li>longer battery life, and support </li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 SmartMobiles. All Rights Reserved.</p>
+    </footer>
+
+</body>
+
+</html>

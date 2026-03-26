@@ -1,0 +1,66 @@
+body{
+    background-color: var();
+}
+
+.container{
+    display: grid;
+    /* place-items: center; */
+    text-align: center;
+    height: 100vh;
+}
+.box{
+    background-color: white;
+    width: 450px;
+    height: 850px;
+    padding:20px;
+    
+}
+p{
+    font-size: 14px;
+}
+h1{
+    font-weight: 500;
+    font-size: 24px;
+}
+h2{
+    font-weight: 400;
+    font-size: 24px;
+}
+h3{
+    font-weight: 400;
+    font-size: 20px;
+}
+.box_uppear{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.Balance{
+    margin-top: 20px;
+}
+.transaction_container{
+    margin-top: 20px;
+    
+}   
+.transaction{
+    margin-top: 20px;
+    padding: 20px;
+}
+.transaction.left{
+    flex-grow: 1;
+    display:flex;
+    justify-content: space-between;
+    background-color: white;
+    color: black;
+}  
+.status{
+    background-color:lack;
+    display: grid;
+    color: white;
+    place-items: center;
+    min-height: 40px;
+    width: 40px;
+}
+.credit{
+    background-color: ;
+}
